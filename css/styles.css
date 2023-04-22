@@ -12,7 +12,7 @@ html {
 }
 
 :root {
-    --primary-font: "Rubik", sans-serif;
+    --primary-font: Poppins, sans-serif;
     --secondary-clr: #30f10e;
     --secondary-clr--dark: #1f7510;
     --live-server-clr--clear: #5df45d;
@@ -22,8 +22,8 @@ html {
     --orange: #b25b2c;
     --yellow: #a8a61c;
     --blue: #1b66a3;
-    --blue-dark: rgba(6, 0, 107);
-    --linear-gradient-standard: linear-gradient(90deg, rgba(69, 0, 255, 1) 0%, rgba(40, 31, 201, 1) 100%);
+    --blue-dark: #06006b;
+    --linear-gradient-standard: #35007c;
 }
 
 .content-standard {
@@ -43,44 +43,26 @@ html {
 }
 
 .btn-standard {
-    background: var(--gray);
-    padding: 1.2rem 2rem;
+    color: var(--white);
+    background: var(--dark-gray);
+    border: 3px solid var(--white);
+    padding: 1rem 1.6rem;
     margin-top: 1rem;
     margin-right: 1rem;
-    color: var(--white);
-    border: none;
     font-size: 2rem;
-    border-radius: 2rem;
+    border-radius: 10px;
+    transition: .5s ease-in-out;
 }
 
 .btn-standard:hover {
     cursor: pointer;
-}
-
-.tecnologia {
-    padding: 0.5em 1em;
-    color: var(--white);
-    border-radius: 8px;
-    font-size: 1.5rem;
-    cursor: default;
-    margin-right: 1rem;
-}
-
-.html {
-    background: var(--orange);
-}
-
-.css {
-    background: var(--blue);
-}
-
-.js {
-    background: var(--yellow);
+    background: var(--white);
+    color: var(--dark-gray);
 }
 
 /* MENU */
-
 .menu-nav {
+    z-index: 1;
     position: fixed;
     top: 0;
     right: 0;
@@ -96,7 +78,7 @@ html {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1.8rem 2.5rem;
+    padding: 2.5rem;
 }
 
 .nav-list {
@@ -106,7 +88,7 @@ html {
 }
 
 .nav-list li {
-    margin-left: 3rem;
+    margin-left: 4rem;
 }
 
 .content-nav h1 {
@@ -120,15 +102,7 @@ html {
     font-weight: bold;
     font-size: 1.6rem;
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
-}
-
-.language-icons a {
-    margin-left: 1.5rem;
-}
-
-.language-icons img {
-    width: 50px;
+    letter-spacing: 0.1rem;
 }
 
 .mobile-menu {
@@ -163,7 +137,7 @@ html {
 /* HOME */
 
 .container-home {
-    margin-top: 90px;
+    margin-top: 28px;
     min-height: 600px;
     background: var(--dark-gray);
 }
@@ -216,8 +190,33 @@ html {
 }
 
 .svg-img {
+    position: relative;
+    z-index: 0;
     width: 100%;
     margin-top: 3rem;
+    animation: move 10s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(10px, -10px);
+    }
+
+    50% {
+        transform: translate(30px, 0px);
+    }
+
+    75% {
+        transform: translate(15px, 15px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 .view {
@@ -230,7 +229,7 @@ html {
     text-transform: uppercase;
     font-size: 1.4rem;
     color: var(--white);
-    margin-top: 5rem;
+    margin: 3rem 0rem;
 }
 
 /* ABOUT */
@@ -302,6 +301,10 @@ html {
 }
 
 .card-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     border-radius: 20px;
     color: var(--white);
@@ -315,20 +318,25 @@ html {
 }
 
 .card-grid .content {
-    margin: 2rem;
+    margin-top: 1rem;
     font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .card-grid .desc {
-    margin: 2rem;
+    margin: 1rem;
     font-size: 1.6rem;
 }
 
 .card-grid .techs {
     display: flex;
-    margin: 2rem;
+    margin: 1rem 0rem;
+}
+
+.iconSmall {
+    width: 5.5rem;
+    margin-right: 1rem;
 }
 
 .card-grid .btn {
@@ -342,19 +350,9 @@ html {
 
 .btn-projeto,
 .btn-codigo {
+    background: var(--gray);
     font-size: 1.8rem;
     margin: 1rem;
-    padding: 1rem 1.6rem;
-    color: var(--white);
-    background: var(--gray);
-    border: 2px solid var(--dark-gray);
-    border-radius: 1.6rem;
-}
-
-.btn-projeto:hover,
-.btn-codigo:hover {
-    cursor: pointer;
-    background: var(--live-server-clr--dark);
 }
 
 /* SKILLS */
@@ -367,6 +365,7 @@ html {
 .content-skills {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .skills {
@@ -391,15 +390,29 @@ html {
 }
 
 .icon {
-    width: 11rem; 
+    width: 10rem;
 }
 
 .figma {
-    width: 7rem;
+    width: 6rem;
+}
+
+.description-icons {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    background-color: var(--dark-gray);
+    margin: 1rem;
+    border-radius: 20px;
+}
+
+.description-icons p {
+    color: var(--white);
+    margin: 3rem;
+    font-size: 1.6rem;
 }
 
 /* Footer */
-
 .container-footer {
     min-height: 6vh;
     background: var(--linear-gradient-standard)
@@ -424,18 +437,6 @@ html {
 
 /* Mobile Menu */
 @media (max-width: 1200px) {
-    /* Menu */
-    .nav-list li {
-        margin-left: 0rem;
-    }
-
-    .language-icons a {
-        margin-left: 0rem;
-    }
-
-    .language-icons a:nth-child(2) {
-        margin-left: 2rem;
-    }
 
     /* Menu Mobile */
     body {
@@ -444,12 +445,12 @@ html {
 
     .nav-list {
         position: absolute;
-        margin-top: 76px;
+        margin-top: 91px;
         top: 0;
         right: 0;
-        width: 100vw;
-        height: 50vh;
-        background: #23232e;
+        width: 60vw;
+        height: 90vh;
+        background: var(--dark-gray);
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -458,7 +459,7 @@ html {
     }
 
     .nav-list li {
-        margin-left: 0;
+        margin-left: 0rem;
         opacity: 0;
     }
 
@@ -481,6 +482,7 @@ html {
 
 /* Dispositivos Móveis */
 @media (max-width: 480px) {
+
     /* Menu */
     .content-nav h1 {
         font-size: 2rem;
@@ -488,7 +490,7 @@ html {
 
     /* Home */
     .container-home {
-        margin-top: 74px;
+        margin-top: 91px;
         min-height: 250px;
     }
 
@@ -569,21 +571,16 @@ html {
     .card-grid {
         min-height: 300px;
     }
-    
+
     .btn-projeto {
         margin-right: 1.5rem;
     }
-    
+
     .btn-projeto,
     .btn-codigo {
         margin-top: 1rem;
         margin-bottom: 1rem;
         padding: 1.5rem 1rem;
-    }
-    
-    .btn-projeto:hover,
-    .btn-codigo:hover {
-        background: none;
     }
 
     /* Skills  */
@@ -592,7 +589,7 @@ html {
         flex-flow: column wrap;
         flex: 1;
     }
-    
+
     /* Footer  */
     .content-footer {
         display: flex;
@@ -603,7 +600,7 @@ html {
         font-size: 1.6rem;
         margin: 0.5rem 0rem;
     }
-    
+
     .btn-footer {
         font-size: 1.6rem;
     }
@@ -615,10 +612,10 @@ html {
 
     /* Home */
     .container-home {
-        margin-top: 77px;
+        margin-top: 91px;
         min-height: 500px;
     }
-    
+
     .content-home {
         display: flex;
         flex-direction: column;
@@ -629,15 +626,15 @@ html {
     .home-presentation {
         margin-top: 3rem;
     }
-    
+
     .home-presentation .hello {
         font-size: 2rem;
     }
-    
+
     .home-presentation .name {
         font-size: 4rem;
     }
-    
+
     .home-presentation .job {
         font-size: 1.8rem;
     }
@@ -645,21 +642,22 @@ html {
     .btn-standard {
         padding: 1rem 1.5rem;
     }
-    
+
     .svg-img {
-        margin-top: 3rem;
-        width: 70%;
-    }
-    
-    .view a {
-        margin: 5rem 0rem;
+        width: 450px;
+        margin-top: 0rem;
     }
 
-    /* About */  
+    .view a {
+        margin-top: 0rem;
+        margin-bottom: 4rem;
+    }
+
+    /* About */
     .content-about {
         padding: 2rem;
     }
-    
+
     .img-about img {
         max-width: 300px;
         margin-right: 1.5rem;
@@ -668,11 +666,11 @@ html {
     .about-h1 {
         font-size: 3rem;
     }
-    
+
     .about h3 {
         font-size: 2.5rem;
     }
-    
+
     .about p {
         font-size: 1.7rem;
     }
@@ -692,13 +690,8 @@ html {
         margin-right: 1rem;
     }
 
-    .btn-projeto:hover,
-    .btn-codigo:hover {
-        background: none;
-    }
-
     /* Skills */
-    
+
     /* Footer */
     .content-footer {
         display: flex;
@@ -721,7 +714,7 @@ html {
 
     /* Home */
     .container-home {
-        margin-top: 77px;
+        margin-top: 91px;
         min-height: 400px;
     }
 
@@ -729,29 +722,30 @@ html {
         margin-top: 5rem;
         margin: 0rem 2rem;
     }
-    
+
     .home-presentation .hello {
         font-size: 2rem;
     }
-    
+
     .home-presentation .name {
         font-size: 3.5rem;
     }
-    
+
     .home-presentation .job {
         font-size: 1.5rem;
     }
-    
+
     .btn-standard {
         padding: 1rem 1.8rem;
         font-size: 1.8rem;
     }
 
     .svg-img {
-        margin-top: 5rem;
-        margin-right: 3rem;
+        width: 100%;
+        margin-top: 0rem;
+        margin-right: 2rem;
     }
-    
+
     .view a {
         margin: 3rem 0rem;
     }
@@ -796,16 +790,11 @@ html {
         margin-bottom: 1rem;
     }
 
-    .btn-projeto:hover,
-    .btn-codigo:hover {
-        background: none;
-    }
-
     /* Skills */
     .container-skills {
         min-height: 250px;
     }
-    
+
     /* Footer */
     .content-footer {
         justify-content: space-around;
@@ -823,9 +812,10 @@ html {
 
 /* Desktops, Telas grandes */
 @media (min-width: 1025px) and (max-width: 1200px) {
+
     /* Home */
     .container-home {
-        margin-top: 77px;
+        margin-top: 91px;
         min-height: 520px;
     }
 
@@ -833,19 +823,19 @@ html {
         margin-top: 5rem;
         margin: 0rem 2rem;
     }
-    
+
     .home-presentation .hello {
         font-size: 2.5rem;
     }
-    
+
     .home-presentation .name {
         font-size: 4rem;
     }
-    
+
     .home-presentation .job {
         font-size: 2rem;
     }
-    
+
     .btn-standard {
         padding: 1rem 1.8rem;
         font-size: 1.8rem;
@@ -870,7 +860,7 @@ html {
 
     .about-h1 {
         margin-top: 0rem;
-        font-size: 3.5rem;   
+        font-size: 3.5rem;
     }
 
     /* Projects */
@@ -890,16 +880,11 @@ html {
         margin-bottom: 1rem;
     }
 
-    .btn-projeto:hover,
-    .btn-codigo:hover {
-        background: none;
-    }
-
     /* Skills */
     .container-skills {
         min-height: 270px;
     }
-    
+
     /* Footer */
     .content-footer {
         justify-content: space-around;
