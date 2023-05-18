@@ -46,12 +46,13 @@ const iconsHabilidades = document.querySelectorAll('.icon');
 const divResultado = document.querySelector('.description-icon');
 
 const descricaoIcons = {
-  htmlIcon: 'HTML5 é linguagem de marcação de hipertexto usada para criar páginas web',
-  cssIcon: 'CSS3 é linguagem de estilo usada para estilizar elementos HTML',
-  jsIcon: 'JavaScript é uma linguagem de programação usada principalmente em aplicações web',
-  reactIcon: 'React é uma biblioteca JavaScript para criar interfaces de usuário',
-  githubIcon: 'GitHub é uma plataforma de hospedagem de código-fonte e controle de versão',
-  figmaIcon: 'Figma é uma ferramenta de design de interface de usuário baseada na web'
+  htmlIcon: 'HTML5 é linguagem de marcação de hipertexto usada para criar páginas web.',
+  cssIcon: 'CSS3 é linguagem de estilo usada para estilizar elementos HTML.',
+  jsIcon: 'JavaScript é uma linguagem de programação usada principalmente em aplicações web.',
+  reactIcon: 'React é uma biblioteca JavaScript para criar interfaces de usuário.',
+  githubIcon: 'GitHub é uma plataforma de hospedagem de código-fonte e controle de versão.',
+  gitIcon: 'O Git é um sistema que permite fazer o versionamento de projetos.',
+  figmaIcon: 'Figma é uma ferramenta de design de interface de usuário baseada na web.'
 }
 
 iconsHabilidades.forEach(icon => {
