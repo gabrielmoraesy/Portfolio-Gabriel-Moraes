@@ -282,7 +282,7 @@ html {
 /* PROJECTS */
 
 .container-projects {
-    min-height: 700px;
+    min-height: 1250px;
     background: var(--linear-gradient-standard)
 }
 
@@ -319,6 +319,7 @@ html {
 
 .card-grid .content {
     margin-top: 1rem;
+    margin-left: 1rem;
     font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
